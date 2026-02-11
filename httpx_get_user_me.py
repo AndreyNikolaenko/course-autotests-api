@@ -4,11 +4,13 @@ login_payload = {
     "email": "test@example.com",
     "password": "test"
 }
-response = httpx.post("http://localhost:8000/api/v1/authentication/login", json=login_payload)
+login_response = httpx.post("http://localhost:8000/api/v1/authentication/login", json=login_payload)
 
-auth_token = response.json()['token']['accessToken']
+login_response_headers = {
+    "Authorization": f"Bearer {login_response.json()['token']['accessToken']}"
+}
 
-response = httpx.get("http://localhost:8000/api/v1/users/me", headers={"Authorization": f"Bearer {auth_token}"})
+response = httpx.get("http://localhost:8000/api/v1/users/me", headers=login_response_headers)
 
 print(response.status_code)
 print(response.json())
