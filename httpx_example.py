@@ -1,4 +1,4 @@
-from pydoc import resolve
+# from pydoc import resolve
 
 import httpx
 from httpx import request
@@ -65,7 +65,7 @@ except httpx.HTTPStatusError as e:
 
 
 try:
-    response = client.get('https://httpbin.org/delay/5', timeout=None)
+    response = client.get('https://httpbin.org/delay/5', timeout=2)
 except httpx.ReadTimeout as e:
     print("Запрос превысил лимит времени", {e})
 

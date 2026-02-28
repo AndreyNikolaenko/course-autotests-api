@@ -8,6 +8,7 @@ class UserSchema(BaseModel):
     Модель данных пользователя
     """
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     email: EmailStr
     last_name: str = Field(alias='lastName')
@@ -20,6 +21,7 @@ class CreateUserRequestSchema(BaseModel):
     Запрос на создание пользователя
     """
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+
     email: EmailStr
     password: str
     last_name: str= Field(alias='lastName')
