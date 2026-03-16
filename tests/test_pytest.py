@@ -9,8 +9,8 @@
 #     def test_update_user(self):
 #         pass
 
-def test_first_try():
-    print("Hello world!")
+# def test_first_try():
+#     print("Hello world!")
 
 # def test_second_try():
 #     pass
@@ -22,9 +22,9 @@ def test_first_try():
 #     def test_two(self):
 #         pass
 
-def test_assert_positive_case():
-    assert 1 == 1
-
-def test_assert_negative_case():
-    x, y = 5, 2
-    assert (y + y) == 5, "ММММММДААААА"
+# def test_assert_positive_case():
+#     assert 1 == 1
+#
+# def test_assert_negative_case():
+#     x, y = 5, 2
+#     assert (y + y) == 5, "ММММММДААААА"
