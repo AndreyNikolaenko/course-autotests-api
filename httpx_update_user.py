@@ -4,7 +4,7 @@ from tools.fakers import fake
 
 create_user_payload = {
   "email": fake.email(),
-  "password": "string",
+  "password": "string1",
   "lastName": "string",
   "firstName": "string",
   "middleName": "string"
@@ -14,8 +14,8 @@ create_user_response_data = create_user_response.json()
 
 
 login_user_payload = {
-  "email": create_user_response_data['user']['email'],
-  "password": "string"
+  "email": create_user_payload['email'],
+  "password": create_user_payload['password']
 }
 login_user_response = httpx.post("http://localhost:8000/api/v1/authentication/login", json=login_user_payload)
 login_user_response_data = login_user_response.json()
